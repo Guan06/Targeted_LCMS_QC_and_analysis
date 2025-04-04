@@ -8,9 +8,7 @@ Specifically, the number of meta data columns (i.e. number of columns before col
 
 Changes in these formatting would affect the script `step0_data_reformat.R`.
 
-
-1) Get the first row from the ../input/*_quant.csv (will be referred as data file below), 
-paste to _compound_raw.lst_ and reformat to _compound.lst_ with: 
+#### 1) Get the first row from the ../input/*_quant.csv (will be referred as data file below), paste to _compound_raw.lst_ and reformat to _compound.lst_ with: 
 
 `cat compound_raw.lst |sed 's/\t/\n/g' |sed '/^$/d' |sed 's/ Results//' | sed '1d' >compound.lst`
 
@@ -22,18 +20,19 @@ Make a soft link of note file from __input__ folder.
 
 `ln -s ../inputs/notes.csv`
 
-2) Get the compound list with mapping information and tidy version with script `step0_data_reformat.R`
+#### 2) Get the compound list with mapping information and tidy version with script `step0_data_reformat.R`
 
 `Rscript step0_data_reformat.R compound.lst ../input/standard_concentrations_5xdil.csv ../input/2023*_quant.csv`
 
 ### Limit of Detection (LOD) 
 
-3) Plot the standard curve and detect the LOD.
+#### 3) Plot the standard curve and detect the LOD.
 
 `Rscript step1_QC.R`
 
 ### Data normalization 
-4) Get the reformatted data table with LOD and normalize the concentration by internal standards as well as using pqn.
+
+#### 4) Get the reformatted data table with LOD and normalize the concentration by internal standards as well as using pqn.
 
 `Rscript step2_get_sample_lod.R`
 
@@ -41,7 +40,7 @@ Internal standards were added to each sample (except QC samples)
 
 ### Results
 
-5) copy the files to the Rproject folder.
+#### 5) copy the files to the '../report/data/' folder.
 
 ```{bash}
 cp s1_rt.pdf ../report/data
