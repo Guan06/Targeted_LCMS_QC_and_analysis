@@ -1,0 +1,283 @@
+Compound	Concentration_in_stock_uM	Level	Concentration
+Donepezil	NA	8	100
+Donepezil	NA	7	20
+Donepezil	NA	6	4
+Donepezil	NA	5	0.8
+Donepezil	NA	4	0.16
+Donepezil	NA	3	0.032
+Nicotinic Acid	NA	8	100
+Nicotinic Acid	NA	7	20
+Nicotinic Acid	NA	6	4
+Nicotinic Acid	NA	5	0.8
+Nicotinic Acid	NA	4	0.16
+Nicotinic Acid	NA	3	0.032
+Pyridoxal	NA	8	100
+Pyridoxal	NA	7	20
+Pyridoxal	NA	6	4
+Pyridoxal	NA	5	0.8
+Pyridoxal	NA	4	0.16
+Pyridoxal	NA	3	0.032
+Pyridoxine	NA	8	100
+Pyridoxine	NA	7	20
+Pyridoxine	NA	6	4
+Pyridoxine	NA	5	0.8
+Pyridoxine	NA	4	0.16
+Pyridoxine	NA	3	0.032
+Serotonin	NA	8	100
+Serotonin	NA	7	20
+Serotonin	NA	6	4
+Serotonin	NA	5	0.8
+Serotonin	NA	4	0.16
+Serotonin	NA	3	0.032
+Dopamine	NA	8	100
+Dopamine	NA	7	20
+Dopamine	NA	6	4
+Dopamine	NA	5	0.8
+Dopamine	NA	4	0.16
+Dopamine	NA	3	0.032
+Leucine	500	8	100
+Leucine	500	7	20
+Leucine	500	6	4
+Leucine	500	5	0.8
+Leucine	500	4	0.16
+Leucine	500	3	0.032
+Phenylalanine	500	8	100
+Phenylalanine	500	7	20
+Phenylalanine	500	6	4
+Phenylalanine	500	5	0.8
+Phenylalanine	500	4	0.16
+Phenylalanine	500	3	0.032
+Tryptophan	500	8	100
+Tryptophan	500	7	20
+Tryptophan	500	6	4
+Tryptophan	500	5	0.8
+Tryptophan	500	4	0.16
+Tryptophan	500	3	0.032
+Isoleucine	500	8	100
+Isoleucine	500	7	20
+Isoleucine	500	6	4
+Isoleucine	500	5	0.8
+Isoleucine	500	4	0.16
+Isoleucine	500	3	0.032
+Kynurenine	NA	8	100
+Kynurenine	NA	7	20
+Kynurenine	NA	6	4
+Kynurenine	NA	5	0.8
+Kynurenine	NA	4	0.16
+Kynurenine	NA	3	0.032
+Methionine	500	8	100
+Methionine	500	7	20
+Methionine	500	6	4
+Methionine	500	5	0.8
+Methionine	500	4	0.16
+Methionine	500	3	0.032
+Thiamine	NA	8	100
+Thiamine	NA	7	20
+Thiamine	NA	6	4
+Thiamine	NA	5	0.8
+Thiamine	NA	4	0.16
+Thiamine	NA	3	0.032
+Valine	500	8	100
+Valine	500	7	20
+Valine	500	6	4
+Valine	500	5	0.8
+Valine	500	4	0.16
+Valine	500	3	0.032
+Homocysteine	500	8	100
+Homocysteine	500	7	20
+Homocysteine	500	6	4
+Homocysteine	500	5	0.8
+Homocysteine	500	4	0.16
+Homocysteine	500	3	0.032
+3-Hydroxykynurenine	NA	8	100
+3-Hydroxykynurenine	NA	7	20
+3-Hydroxykynurenine	NA	6	4
+3-Hydroxykynurenine	NA	5	0.8
+3-Hydroxykynurenine	NA	4	0.16
+3-Hydroxykynurenine	NA	3	0.032
+Taurine	500	8	100
+Taurine	500	7	20
+Taurine	500	6	4
+Taurine	500	5	0.8
+Taurine	500	4	0.16
+Taurine	500	3	0.032
+Pyridoxal-5-Phosphate	NA	8	100
+Pyridoxal-5-Phosphate	NA	7	20
+Pyridoxal-5-Phosphate	NA	6	4
+Pyridoxal-5-Phosphate	NA	5	0.8
+Pyridoxal-5-Phosphate	NA	4	0.16
+Pyridoxal-5-Phosphate	NA	3	0.032
+Tyrosine	200	8	40
+Tyrosine	200	7	8
+Tyrosine	200	6	1.6
+Tyrosine	200	5	0.32
+Tyrosine	200	4	0.064
+Tyrosine	200	3	0.0128
+AABA	500	8	100
+AABA	500	7	20
+AABA	500	6	4
+AABA	500	5	0.8
+AABA	500	4	0.16
+AABA	500	3	0.032
+Folic Acid	NA	8	100
+Folic Acid	NA	7	20
+Folic Acid	NA	6	4
+Folic Acid	NA	5	0.8
+Folic Acid	NA	4	0.16
+Folic Acid	NA	3	0.032
+Folinic Acid	NA	8	100
+Folinic Acid	NA	7	20
+Folinic Acid	NA	6	4
+Folinic Acid	NA	5	0.8
+Folinic Acid	NA	4	0.16
+Folinic Acid	NA	3	0.032
+Alanine	500	8	100
+Alanine	500	7	20
+Alanine	500	6	4
+Alanine	500	5	0.8
+Alanine	500	4	0.16
+Alanine	500	3	0.032
+DOPA	NA	8	100
+DOPA	NA	7	20
+DOPA	NA	6	4
+DOPA	NA	5	0.8
+DOPA	NA	4	0.16
+DOPA	NA	3	0.032
+Pyridoxamine	NA	8	100
+Pyridoxamine	NA	7	20
+Pyridoxamine	NA	6	4
+Pyridoxamine	NA	5	0.8
+Pyridoxamine	NA	4	0.16
+Pyridoxamine	NA	3	0.032
+Threonine	500	8	100
+Threonine	500	7	20
+Threonine	500	6	4
+Threonine	500	5	0.8
+Threonine	500	4	0.16
+Threonine	500	3	0.032
+Homoserine	500	8	100
+Homoserine	500	7	20
+Homoserine	500	6	4
+Homoserine	500	5	0.8
+Homoserine	500	4	0.16
+Homoserine	500	3	0.032
+Glycine	500	8	100
+Glycine	500	7	20
+Glycine	500	6	4
+Glycine	500	5	0.8
+Glycine	500	4	0.16
+Glycine	500	3	0.032
+Methylcobalamine	NA	8	100
+Methylcobalamine	NA	7	20
+Methylcobalamine	NA	6	4
+Methylcobalamine	NA	5	0.8
+Methylcobalamine	NA	4	0.16
+Methylcobalamine	NA	3	0.032
+Glutamine	500	8	100
+Glutamine	500	7	20
+Glutamine	500	6	4
+Glutamine	500	5	0.8
+Glutamine	500	4	0.16
+Glutamine	500	3	0.032
+Glutamic acid	500	8	100
+Glutamic acid	500	7	20
+Glutamic acid	500	6	4
+Glutamic acid	500	5	0.8
+Glutamic acid	500	4	0.16
+Glutamic acid	500	3	0.032
+Serine	500	8	100
+Serine	500	7	20
+Serine	500	6	4
+Serine	500	5	0.8
+Serine	500	4	0.16
+Serine	500	3	0.032
+Asparagine	500	8	100
+Asparagine	500	7	20
+Asparagine	500	6	4
+Asparagine	500	5	0.8
+Asparagine	500	4	0.16
+Asparagine	500	3	0.032
+Cyanocobalamine	NA	8	100
+Cyanocobalamine	NA	7	20
+Cyanocobalamine	NA	6	4
+Cyanocobalamine	NA	5	0.8
+Cyanocobalamine	NA	4	0.16
+Cyanocobalamine	NA	3	0.032
+Citrulline	500	8	100
+Citrulline	500	7	20
+Citrulline	500	6	4
+Citrulline	500	5	0.8
+Citrulline	500	4	0.16
+Citrulline	500	3	0.032
+Agmatine	NA	8	100
+Agmatine	NA	7	20
+Agmatine	NA	6	4
+Agmatine	NA	5	0.8
+Agmatine	NA	4	0.16
+Agmatine	NA	3	0.032
+GABA	500	8	100
+GABA	500	7	20
+GABA	500	6	4
+GABA	500	5	0.8
+GABA	500	4	0.16
+GABA	500	3	0.032
+Cadaverine	NA	8	100
+Cadaverine	NA	7	20
+Cadaverine	NA	6	4
+Cadaverine	NA	5	0.8
+Cadaverine	NA	4	0.16
+Cadaverine	NA	3	0.032
+Aspartic acid	500	8	100
+Aspartic acid	500	7	20
+Aspartic acid	500	6	4
+Aspartic acid	500	5	0.8
+Aspartic acid	500	4	0.16
+Aspartic acid	500	3	0.032
+Histidine	500	8	100
+Histidine	500	7	20
+Histidine	500	6	4
+Histidine	500	5	0.8
+Histidine	500	4	0.16
+Histidine	500	3	0.032
+Arginine	500	8	100
+Arginine	500	7	20
+Arginine	500	6	4
+Arginine	500	5	0.8
+Arginine	500	4	0.16
+Arginine	500	3	0.032
+Anserine	NA	8	100
+Anserine	NA	7	20
+Anserine	NA	6	4
+Anserine	NA	5	0.8
+Anserine	NA	4	0.16
+Anserine	NA	3	0.032
+Lysine	500	8	100
+Lysine	500	7	20
+Lysine	500	6	4
+Lysine	500	5	0.8
+Lysine	500	4	0.16
+Lysine	500	3	0.032
+Lysine 13C6	NA	8	100
+Lysine 13C6	NA	7	20
+Lysine 13C6	NA	6	4
+Lysine 13C6	NA	5	0.8
+Lysine 13C6	NA	4	0.16
+Lysine 13C6	NA	3	0.032
+Carnosine	NA	8	100
+Carnosine	NA	7	20
+Carnosine	NA	6	4
+Carnosine	NA	5	0.8
+Carnosine	NA	4	0.16
+Carnosine	NA	3	0.032
+Proline	500	8	100
+Proline	500	7	20
+Proline	500	6	4
+Proline	500	5	0.8
+Proline	500	4	0.16
+Proline	500	3	0.032
+Ornithine	500	8	100
+Ornithine	500	7	20
+Ornithine	500	6	4
+Ornithine	500	5	0.8
+Ornithine	500	4	0.16
+Ornithine	500	3	0.032

@@ -16,7 +16,7 @@ There are three folders in this repository:
 	- Notes file (_notes.csv_) 
 	- Concentrations of standard used in the experiment (_standard_concentrations_5xdil.csv_)
 
-- __scripts__ contains scripts for data processing and report generation. Please refer to the readme.txt file inside this folder for details.
+- __scripts__ contains scripts for data processing and report generation. Please refer to the _readme.md_ file inside this folder for details.
 
 - __report__ contains the Rmarkdown report and data included in the report. 
 
@@ -25,11 +25,3 @@ There are three folders in this repository:
 Benjamin J. Hershey et al., Clonal cooperation through soluble metabolite exchange facilitates metastatic outgrowth by modulating Allee effect. Sci. Adv. 9, eadh4184 (2023). DOI: [10.1126/sciadv.adh4184](https://www.science.org/doi/full/10.1126/sciadv.adh4184)
 
 Sonja Blanche and Vinita Periwal et al., Impact of low-calorie sweeteners on gut bacteria is modulated by common xenobiotics.  bioRxiv (2025). DOI: [https://doi.org/10.1101/2025.03.28.645995](https://www.biorxiv.org/content/10.1101/2025.03.28.645995v1)
-
-## Authors and Contributors
-
-This repository is developed by [Rui Guan](https://github.com/Guan06) and contributed by:
-[Stephan Kamrad](https://bsky.app/profile/skamrad.bsky.social), 
-[Rebecca Boston](https://github.com/RHBoston), 
-[Rob Bradley](https://bsky.app/profile/rbradley.bsky.social), 
-[Sonja Blache](https://bsky.app/profile/sonjablasche.bsky.social) and more. 

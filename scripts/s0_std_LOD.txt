@@ -1,0 +1,33 @@
+Compound	LOD
+Nicotinic Acid	0.16
+Pyridoxal	0.16
+Pyridoxine	0.16
+Dopamine	0.16
+Leucine	0.16
+Phenylalanine	0.8
+Tryptophan	0.16
+Isoleucine	0.16
+Kynurenine	0.16
+Methionine	0.16
+Valine	0.16
+Tyrosine	0.32
+AABA	0.16
+Alanine	0.16
+Pyridoxamine	0.16
+Threonine	0.8
+Homoserine	0.8
+Glycine	0.8
+Glutamine	0.16
+Glutamic acid	0.8
+Serine	0.16
+Asparagine	0.8
+Citrulline	0.16
+Agmatine	0.16
+GABA	0.16
+Cadaverine	0.16
+Aspartic acid	0.8
+Histidine	0.8
+Arginine	0.8
+Lysine	0.8
+Proline	0.8
+Ornithine	0.16

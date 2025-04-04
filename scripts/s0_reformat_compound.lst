@@ -1,0 +1,52 @@
+Compound	Order	RT	Area	CalCon	FWHM	SN
+Caffeine	0	RT	Area	Calc..Conc.	FWHM	S.N
+Donepezil	1	RT.1	Area.1	Calc..Conc..1	FWHM.1	S.N.1
+Nicotinic Acid	2	RT.2	Area.2	Calc..Conc..2	FWHM.2	S.N.2
+Pyridoxal	3	RT.3	Area.3	Calc..Conc..3	FWHM.3	S.N.3
+Pyridoxine	4	RT.4	Area.4	Calc..Conc..4	FWHM.4	S.N.4
+Serotonin	5	RT.5	Area.5	Calc..Conc..5	FWHM.5	S.N.5
+Dopamine	6	RT.6	Area.6	Calc..Conc..6	FWHM.6	S.N.6
+Leucine	7	RT.7	Area.7	Calc..Conc..7	FWHM.7	S.N.7
+Phenylalanine	8	RT.8	Area.8	Calc..Conc..8	FWHM.8	S.N.8
+Tryptophan	9	RT.9	Area.9	Calc..Conc..9	FWHM.9	S.N.9
+Isoleucine	10	RT.10	Area.10	Calc..Conc..10	FWHM.10	S.N.10
+Kynurenine	11	RT.11	Area.11	Calc..Conc..11	FWHM.11	S.N.11
+Methionine	12	RT.12	Area.12	Calc..Conc..12	FWHM.12	S.N.12
+Thiamine	13	RT.13	Area.13	Calc..Conc..13	FWHM.13	S.N.13
+Valine	14	RT.14	Area.14	Calc..Conc..14	FWHM.14	S.N.14
+Homocysteine	15	RT.15	Area.15	Calc..Conc..15	FWHM.15	S.N.15
+3-Hydroxykynurenine	16	RT.16	Area.16	Calc..Conc..16	FWHM.16	S.N.16
+Taurine	17	RT.17	Area.17	Calc..Conc..17	FWHM.17	S.N.17
+Pyridoxal-5-Phosphate	18	RT.18	Area.18	Calc..Conc..18	FWHM.18	S.N.18
+Tyrosine	19	RT.19	Area.19	Calc..Conc..19	FWHM.19	S.N.19
+AABA	20	RT.20	Area.20	Calc..Conc..20	FWHM.20	S.N.20
+Folic Acid	21	RT.21	Area.21	Calc..Conc..21	FWHM.21	S.N.21
+Amoxicilin	22	RT.22	Area.22	Calc..Conc..22	FWHM.22	S.N.22
+Folinic Acid	23	RT.23	Area.23	Calc..Conc..23	FWHM.23	S.N.23
+Alanine	24	RT.24	Area.24	Calc..Conc..24	FWHM.24	S.N.24
+DOPA	25	RT.25	Area.25	Calc..Conc..25	FWHM.25	S.N.25
+Pyridoxamine	26	RT.26	Area.26	Calc..Conc..26	FWHM.26	S.N.26
+Threonine	27	RT.27	Area.27	Calc..Conc..27	FWHM.27	S.N.27
+Homoserine	28	RT.28	Area.28	Calc..Conc..28	FWHM.28	S.N.28
+Glycine	29	RT.29	Area.29	Calc..Conc..29	FWHM.29	S.N.29
+Methylcobalamine	30	RT.30	Area.30	Calc..Conc..30	FWHM.30	S.N.30
+Glutamine 13C5	31	RT.31	Area.31	Calc..Conc..31	FWHM.31	S.N.31
+Glutamine	32	RT.32	Area.32	Calc..Conc..32	FWHM.32	S.N.32
+Glutamic acid	33	RT.33	Area.33	Calc..Conc..33	FWHM.33	S.N.33
+Serine	34	RT.34	Area.34	Calc..Conc..34	FWHM.34	S.N.34
+Asparagine	35	RT.35	Area.35	Calc..Conc..35	FWHM.35	S.N.35
+Cyanocobalamine	36	RT.36	Area.36	Calc..Conc..36	FWHM.36	S.N.36
+Citrulline	37	RT.37	Area.37	Calc..Conc..37	FWHM.37	S.N.37
+Agmatine	38	RT.38	Area.38	Calc..Conc..38	FWHM.38	S.N.38
+GABA	39	RT.39	Area.39	Calc..Conc..39	FWHM.39	S.N.39
+Cadaverine	40	RT.40	Area.40	Calc..Conc..40	FWHM.40	S.N.40
+Aspartic acid	41	RT.41	Area.41	Calc..Conc..41	FWHM.41	S.N.41
+Histidine	42	RT.42	Area.42	Calc..Conc..42	FWHM.42	S.N.42
+Arginine	43	RT.43	Area.43	Calc..Conc..43	FWHM.43	S.N.43
+Arginine 13C6	44	RT.44	Area.44	Calc..Conc..44	FWHM.44	S.N.44
+Anserine	45	RT.45	Area.45	Calc..Conc..45	FWHM.45	S.N.45
+Lysine 13C6	46	RT.46	Area.46	Calc..Conc..46	FWHM.46	S.N.46
+Lysine	47	RT.47	Area.47	Calc..Conc..47	FWHM.47	S.N.47
+Carnosine	48	RT.48	Area.48	Calc..Conc..48	FWHM.48	S.N.48
+Proline	49	RT.49	Area.49	Calc..Conc..49	FWHM.49	S.N.49
+Ornithine	50	RT.50	Area.50	Calc..Conc..50	FWHM.50	S.N.50

@@ -1,0 +1,341 @@
+---
+title: "20231108_SonjaB_duloxlsostev_AA"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+author: "Stephan Kamrad, Rui Guan, Kiran R. Patil"
+date: "2023-11-22"
+bibliography: references.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+```{r load_data, echo = FALSE}
+  dat0 <- read.table("./data/s1_data_QC.txt", header = T, sep = "\t")
+  sample <- unique(dat0[, colnames(dat0) %in% c("Name", "Type")])
+  
+  n1 <- nrow(sample[sample$Type == "Sample", ])
+  n2 <- nrow(sample[sample$Type == "Cal", ])
+  n3 <- nrow(sample[sample$Type == "Blank", ])
+  
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  compound_lst <- unique(dat$Compound)
+```
+
+In this project, we analyzed `r nrow(sample)` samples in total, including `r n1` samples, with `r n2` external standard samples and `r n3` blank samples for quality control. In total, the results of `r length(compound_lst)` compounds are presented in this report. Below we show the first few sample and compound IDs.
+
+```{r summary, echo = FALSE, warning=FALSE, message=FALSE}
+  sample_lst <- unique(dat$Name)
+  
+  n <- 6
+  if (length(sample_lst) < 6) {n <- length(sample_lst)}
+
+  knitr::kable(head(sample_lst), row.names = F, col.names = "Sample")
+  
+  compound_lst <- unique(dat$Compound)
+  
+  n <- 6
+  if (length(compound_lst) < 6) {n <- length(compound_lst)}
+
+  knitr::kable(head(compound_lst), row.names = F, col.names = "Compound")
+```
+
+## Results
+
+### 1. Quality control of LC-MS data
+
+To monitor the changes in chromatographic properties, we examined the retention time of samples (including the blank and standard samples used as control). For example,  **Figure 1** shows the retention time of compound **`r compound_lst[2]`**, no large variation was observed (gray solid line indicates the average of retention time over measurements and two dashed lines indicate +5% and -5% deviation). See the full list of compounds in 
+
+```{r embed1, echo = FALSE, warning=FALSE, message=FALSE}
+  xfun::embed_file('./data/s1_rt.pdf')
+```
+
+```{r plot rt, echo = FALSE, warning=FALSE, message=FALSE}
+  library(ggplot2)
+  main_theme <- theme(panel.background = element_blank(),
+                    plot.background = element_blank(),
+                    panel.grid = element_blank(),
+                    axis.line.x = element_line(color = "black"),
+                    axis.line.y = element_line(color = "black"),
+                    axis.ticks = element_blank(),
+                    axis.text = element_text(colour = "black", size = 10),
+                    text = element_text(family="sans"))
+  
+  dat_PA <- dat0[dat0$Compound == compound_lst[2], ]
+  ggplot(dat_PA, aes(x = Time, y = RT)) + 
+    geom_point(aes(color = Type), alpha = 0.9) +
+    labs(x = "Measure time", y = "Retention time") +
+    theme(legend.position = "top") +
+    scale_color_manual(values = c("plum", "#F0CD42", "#56B4E9")) +
+    geom_hline(aes(yintercept = Mean), linetype = "solid",
+               color = "gray", linewidth = 0.8) +
+    geom_hline(aes(yintercept = Upper), linetype = "dashed",
+                color = "gray", linewidth = 0.8) +
+    geom_hline(aes(yintercept = Lower), linetype = "dashed",
+                color = "gray", linewidth = 0.8) +
+    main_theme +
+    labs(x = "Measure time", y = "Retention time") +
+    theme(legend.position = "top") +
+    scale_color_manual(values = c("plum", "#F0CD42", "#56B4E9"))
+```
+
+### 2. Limits of detection (LOD) 
+
+By comparing the calculated concentration to the real concentration of standard compounds, as well as taking into account the fitness of regression, we determined the upper and lower limits of detection (**LOD**) for each compound. Below we show the distribution of samples (in blue) compared to standards (gold) with different concentrations and blank samples (in purple). The salmon dash line indicates the lower LOD of corresponding compounds, indicated by R-squared value changes in regression. Shapes of data points corresponding to the signal-to-noise ratio, above (triangle) or below (circle) the threshold (S/N = 10). Take compound **`r compound_lst[2]`** as an example again (**Figure 2**) as shown below and the figure of all compounds could be found in
+
+```{r embed2, echo = FALSE}
+  xfun::embed_file('./data/s1_std_curve.pdf')
+```
+
+```{r LOD_fig, echo=FALSE, message=FALSE, warning=FALSE}
+  library(ggplot2)
+
+  ggplot(dat_PA, aes(x = Concentration, y = Area)) +
+    geom_vline(aes(xintercept = LOD), linetype = "dotted",
+                   color = "salmon", size = 0.6) +
+    geom_point(aes(shape = SN_bi, color = Type)) +
+    scale_shape_manual(values = c(1, 2)) +
+    scale_x_continuous(trans = 'log10') +
+    scale_y_continuous(trans = 'log10') +
+    labs(x = "Concentration", y = "Area") +
+    theme(legend.position = "top") +
+    scale_color_manual(values = c("plum", "#F0CD42", "#56B4E9")) +
+    main_theme + theme_minimal()
+  
+```
+
+Below we also show the information on the first few compounds:
+
+```{r LOD, echo = FALSE}
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  tmp <- head(dat[, c("Name", "Compound", "Within_detection",
+                      "Calculated_Concentration")])
+  
+  knitr::kable(tmp, row.names = F)
+```
+
+### 3. Data normalization
+
+Probabilistic quotient normalization (**pqn**) was implemented [@dieterle2006] to normalize the concentration of samples. A random sample was chosen as the "reference" sample. The ratios between all other samples and the reference sample for all compounds were computed and the median value was extracted as the normalization factor the sample. New columns named "**Factor_pqn**" and "**Calculated_concentration_reNorm_pqn**" were added, indicating the computed normalization factor for each sample and the concentration of compounds after the **pqn** normalization, respectively.
+
+#### Attention:
+
+Please think carefully if **pqn** normalization is suitable for your project and decide if the original or normalized calculated concentration should be used for further analysis (Table S2). 
+
+```{r pqn, echo = FALSE}
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  tmp <- head(dat[, c("Name", "Compound", "Within_detection", "Factor_pqn", "Calculated_concentration_reNorm_pqn")])
+  knitr::kable(tmp, row.names = F)
+  # to see the full table, unannotate the next line
+  # dat[, c("Name", "Compound", "Within_detection", "Factor_pqn", "Calculated_concentration_reNorm_pqn")]
+```
+
+### 4. QC samples for quality control 
+
+We also examined the peak areas over time for QC samples. Some compounds fluctuated more than others regarding areas, and when the difference between specific measurement and average area is larger than 25% of the average area, a warning is generated (and also indicated as "Yes" for "Warning" in figure below). The golden solid line indicates the average area of QC samples over time and dashed lines indicate the +25% and -25% deviation.
+
+```{r qc_plot, echo = FALSE, fig.width=18, fig.height=10}
+  palette_OkabeIto <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442",
+                      "#0072B2", "#D55E00", "#CC79A7", "#999999")
+  getOI = colorRampPalette(palette_OkabeIto)
+
+  qc <- read.table("./data/s3_QC_samples_area_over_time_SD_Mean.txt", 
+                   header = T, sep = "\t")
+
+  ggplot(qc, aes(x = Time, y = Area)) +
+    facet_wrap(~ Compound, scales = "free") +
+    geom_point(aes(color = Warning), alpha = 0.9) + geom_line(color = "gray") +
+    main_theme +
+    geom_hline(aes(yintercept = Mean), linetype = "solid",
+               color = "gold", linewidth = 0.8) +
+    geom_hline(aes(yintercept = Upper), linetype = "dashed",
+                color = "gold", linewidth = 0.8) +
+    geom_hline(aes(yintercept = Lower), linetype = "dashed",
+                color = "gold", linewidth = 0.8) +
+    scale_color_manual(values = c("gray", "salmon")) +
+    labs(x = "Measure time", y = "Area") +
+    theme(legend.position = "top")
+  
+```
+
+Figure could be downloaded from here too:
+
+```{r embed6, echo = FALSE}
+  xfun::embed_file('./data/s3_area_over_time_facet.pdf')
+```
+
+
+Specific compounds and measurement that triggered the warning:
+
+```{r area_over_time, echo = FALSE}
+  qc <- qc[qc$Warning == "Yes", ]
+  qc$Deviation_percentage <- qc$Deviation * 100
+  knitr::kable(qc[, c("Name", "Compound", "Acq..Date.Time", "Area", "Mean", "SD",
+                      "Deviation_percentage")],
+               row.names = F)
+```
+
+### 5. Overview of the detected compounds 
+
+Below we show the number of samples that each compound were detected in:
+
+```{r bar_stat1, echo = FALSE, message = FALSE}
+  library(dplyr, quietly = TRUE)
+  library(ggplot2)
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  
+  dat1 <- dat[, c("Compound", "Within_detection")]
+  dat1_df <- as.data.frame(dat1 %>% 
+                             group_by(Compound) %>% 
+                             summarise(No_of_samples = sum(Within_detection == "Yes")))
+  ggplot(dat1_df, aes(No_of_samples)) + geom_bar(color = "gray47", fill = "cornflowerblue") +
+    labs(x = "Number of samples", y = "Number of compounds") +
+    theme(panel.background = element_blank(),
+                    plot.background = element_blank(),
+                    panel.grid = element_blank(),
+                    axis.line.x = element_line(color = "black"),
+                    axis.line.y = element_line(color = "black"),
+                    axis.ticks = element_blank(),
+                    axis.text = element_text(colour = "black", size = 10))
+
+```
+
+And the number of compounds that each sample was detected to contain:
+
+```{r bar_stat2, echo = FALSE}
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  library(dplyr)
+  
+  dat1 <- dat[, c("Name", "Within_detection")]
+  dat1_df <- as.data.frame(dat1 %>% 
+                             group_by(Name) %>% 
+                             summarise(No_of_compounds = sum(Within_detection == "Yes")))
+  
+  ggplot(dat1_df, aes(No_of_compounds)) + 
+    geom_bar(color = "gray47", fill = "cornflowerblue") +
+    labs(x = "Number of compounds", y = "Number of samples") +
+    theme(panel.background = element_blank(),
+                    plot.background = element_blank(),
+                    axis.line.x = element_line(color = "black"),
+                    axis.line.y = element_line(color = "black"),
+                    axis.ticks = element_blank(),
+                    axis.text = element_text(colour = "black", size = 10))
+```
+
+## Conclusion
+
+In conclusion, we were able to detect most of the compounds in most of the samples. Below we listed the compounds that were reliably detected, didn't work well, and were excluded for processing. 
+
+```{r read_note, echo = FALSE}
+  note <- read.csv("./data/notes.csv")
+  note <- note[, -2]
+```
+
+##### 1. Reliably detected (at least in intracellular samples) compounds with individual notes:
+
+```{r well_lst, echo = FALSE}
+  well_lst <- note[note$Annotation == "WorkedWell", ]
+  #well_lst <- well_lst[, 1:2]
+  #print(well_lst)
+  knitr::kable(well_lst, row.names = F)
+```
+
+##### 2. Compounds that didn't work perfectly, need further discussion:
+
+```{r fine_lst, echo = FALSE}
+  fine_lst <- note[note$Annotation == "Maybe", ]
+  #print(fine_lst)
+  knitr::kable(fine_lst, row.names = F)
+```
+
+##### 3. Compounds that were excluded:
+
+```{r exclude_lst, echo = FALSE}
+  fine_lst <- note[note$Annotation == "Exclude", ]
+  #print(fine_lst)
+  knitr::kable(fine_lst, row.names = F)
+```
+
+## Material and methods
+
+Measured on: 7.11.2023  
+Internal method designation: 20231107_AA_3min  
+Methods are modified from previous publication [@Mülleder2016].  
+
+### Sample preparation
+
+Supenatant samples were collected by Sonja. 80ul of a 10x dilution in water was prepared and 120ul of extraction buffer (1:1 MeOH:ACN + 20uM of each donepizil, caffeine, amoxicillin, ibuprofen) was added, followed by brief mixing and incubation at 4C for 30minutes. The extract was cleared by centrifugation (4C, 3200g, 5min) and the supernatant was transferred to a fresh PCR plate for analysis.
+Standard series was prepared in water.
+0.25ul of internal standard dissolved in water containing labelled compounds was coinjected with each sample. Contains:
+
+Sodium pyruvate 13C3 - 200uM  
+Succinic acid 13C4 - 100uM  
+Arginine 13C6 - 50uM  
+Glutamine 13C5 - 50uM  
+Citric acid 13C6 - 100uM  
+Lysine 13C6 - 50uM  
+
+### LC-MS measurement
+
+Mass spectrometer: Agilent triple quadrupole (QQQ) 6470 with JetStream ion source (AJS-ESI)  
+UPLC instrument: Agilent 1290 Infinity II  
+Acquisition scheme: dynamic (schedueled) MRM  
+Chromatography: Hydrophilic interaction liquid chromatography (HILIC)  
+Analytical Column: Waters Acquity BEH Amide 1.7 µm, 2.1 mm X 100 mm  
+Column temperature: 35°C  
+Needle wash: Water + 0.1% formic acid  
+Injection Volume: 0.25µl  
+Buffer A: 50% acetonitrile, 10 mM ammonium formate, 0.176% formic acid  
+Buffer B: 95:5:5 acetonitrile:methanol:water, 10 mM ammonium formate, 0.176% formic acid  
+Flow rate: 0.9ml/min  
+Gradient: 0min:85%B, 0.7min:85%B, 2.55min:5%B, 2.9min:5%B, 2.91min:85%B, 3.5min:stoptime  
+Source parameters: Gas temp:325°C, Gas flow:10 l/min, Nebulizer:40psi, Sheath gas temp:350°C, Sheath gas flow:11 l/min, Capillary (positive):3500V, Capillary (negative):3500V, Nozzle voltage (positive):1000V, Nozzle voltage (negative):100V  
+Cycle time: 320ms  
+
+
+### LC-MS data analysis
+
+Acquisition software: MassHunter Workstation LC/MS Data Acquisition v10.1  
+Analysis software: MassHunter Workstation Quantitative Analysis for QQQ v10.1  
+We used customized R scripts (in ./scripts/ folder) for the pre-processing and visualization of data.   
+
+## Supplementary Data
+
+All the tables here could be downloaded through the following links or check them in the folder "./data". Below we show the first few rows of each supplementary table:
+
+### Table S1 The concentraion of standards.
+
+```{r embed3, echo = FALSE}
+  xfun::embed_file('./data/s0_reformat_std_concentration.txt')
+```
+
+```{r head_s1, echo = FALSE}
+  s1 <- read.table("./data/s0_reformat_std_concentration.txt", header = T, sep = "\t", check.names = F)
+  #head(s1)
+  knitr::kable(head(s1), row.names = F)
+```
+
+### Table S2 The concentration of samples.
+
+```{r embed4, echo = FALSE}
+  xfun::embed_file('./data/s2_reformat_data_with_LOD_reNorm.txt')
+```
+
+```{r s2, echo = FALSE}
+  dat <- read.table("./data/s2_reformat_data_with_LOD_reNorm.txt", header = T, sep = "\t")
+  #head(dat)
+  knitr::kable(head(dat), row.names = F)
+```
+
+## Acknowledgement
+
+We thank Michael Mülleder, High Throughput Mass Spectrometry Facility, Charité Universitätsmedizin Berlin for developing the method applied in this study.
+
+## References

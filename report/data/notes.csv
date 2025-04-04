@@ -1,0 +1,52 @@
+Compound,InternalStandard,Annotation,Comments
+Caffeine,x,WorkedWell,
+Donepezil,x,WorkedWell,
+Nicotinic Acid,,Maybe,Quite low
+Pyridoxal,,Maybe,Quite low
+Pyridoxine,,Maybe,Quite low
+Serotonin,,Exclude,"Not detected in Samples, interference"
+Dopamine,,Maybe,Quite low
+Leucine,,WorkedWell,Peak overlapping with Isoleucine
+Phenylalanine,,WorkedWell,
+Tryptophan,,WorkedWell,
+Isoleucine,,WorkedWell,Peak overlapping with Leucine
+Kynurenine,,Maybe,Quite low
+Methionine,,WorkedWell,
+Thiamine,,Exclude,Not detected in Samples
+Valine,,WorkedWell,
+Homocysteine,,Exclude,Not detected in Samples
+3-Hydroxykynurenine,,Exclude,Not detected in Samples
+Taurine,,Exclude,Not detected in Samples
+Pyridoxal-5-Phosphate,,Exclude,Not detected in Samples
+Tyrosine,,WorkedWell,
+AABA,,WorkedWell,
+Folic Acid,,Exclude,Not detected in Samples
+Amoxicilin,x,WorkedWell,Probably the best choice of internal standard
+Folinic Acid,,Exclude,Not detected in Samples
+Alanine,,WorkedWell,"Slightly above calibrated range, but not saturated"
+DOPA,,Exclude,Not detected in Samples
+Pyridoxamine,,Maybe ,Quite low
+Threonine,,WorkedWell,
+Homoserine,,Maybe,A bit noisy
+Glycine,,WorkedWell,
+Methylcobalamine,,Exclude,Not detected in Samples
+Glutamine 13C5,x,WorkedWell,
+Glutamine,,WorkedWell,
+Glutamic acid,,WorkedWell,
+Serine,,WorkedWell,
+Asparagine,,WorkedWell,
+Cyanocobalamine,,Exclude,
+Citrulline,,WorkedWell,
+Agmatine,,WorkedWell,
+GABA,,WorkedWell,
+Cadaverine,,WorkedWell,
+Aspartic acid,,WorkedWell,
+Histidine,,WorkedWell,
+Arginine,,Maybe,"Above calibrated range, slightly saturated"
+Arginine 13C6,x,WorkedWell,
+Anserine,,Exclude,Not detected in Samples
+Lysine,,,
+Lysine 13C6,x,WorkedWell,
+Carnosine,,Exclude,Not detected in Samples
+Proline,,WorkedWell,
+Ornithine,,WorkedWell,
