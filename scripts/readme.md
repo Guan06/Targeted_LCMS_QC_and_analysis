@@ -38,9 +38,13 @@ Make a soft link of note file from __input__ folder.
 
 Internal standards were added to each sample (except QC samples)
 
+#### 5) Verify that the peak area of QC samples for each compound falls within a 25% fluctuation range. 
+
+`Rscript step3_peak_area_QC_samples.R`
+
 ### Results
 
-#### 5) copy the files to the '../report/data/' folder.
+#### 6) copy the files to the '../report/data/' folder to be included in the Rmarkdown report. 
 
 ```{bash}
 cp s1_rt.pdf ../report/data
