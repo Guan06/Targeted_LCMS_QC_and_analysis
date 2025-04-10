@@ -32,4 +32,4 @@ Sonja Blanche and Vinita Periwal et al., Impact of low-calorie sweeteners on gut
  [Stephan Kamrad](https://bsky.app/profile/skamrad.bsky.social),
  [Rebecca Boston](https://github.com/RHBoston),
  [Rob Bradley](https://bsky.app/profile/rbradley.bsky.social),
- [Sonja Blache](https://bsky.app/profile/sonjablasche.bsky.social) and more.
+ [Sonja Blache](https://bsky.app/profile/sonjablasche.bsky.social), [Francesca Eichacker](https://www.mrc-tox.cam.ac.uk/staff/francesca-eichacker) and more.
